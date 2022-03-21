@@ -157,6 +157,149 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/01/lab4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Xiaxi Shen">
+      <meta itemprop="description" content="Shen's Blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沈夏希">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/01/lab4/" class="post-title-link" itemprop="url">Lab4</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-01 21:07:57 / Modified: 21:45:51" itemprop="dateCreated datePublished" datetime="2022-02-01T21:07:57-08:00">2022-02-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="持续集成（CI）"><a href="#持续集成（CI）" class="headerlink" title="持续集成（CI）"></a>持续集成（CI）</h1><p>在之前的lab中，我们学习了如何使用GTest来为我们的代码编写单元测试。这是一个非常强大的技能，它可以确保我们不会破坏代码中的某些内容，并且我们编写的代码可以符合规范。我们已经讨论了测试驱动开发（TDD）：先写对于规范的测试，然后在继续前进前写下足够的代码通过测试。这些都很好，但是我们喜欢用一种方式，可以自动地测试我们的代码当我们做出某些更改并且不会破坏我们自己和我们队友的代码。一个有效的方法让你成为一个更有效的编程者是学习如何防止产生了一些小的错误，从而导致更大的错误。这就是为什么我们需要持续集成。持续集成（CI）是一种开发实践，可以让开发者频繁地把代码集成到一个功效的仓库，并且每一次集成都通过自动化构建和自动化测试进行验证。这将使你尽早发现错误，并且不会提交未通过当前测试的代码，甚至会破坏过去的测试（回归测试）。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/30/lab1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Xiaxi Shen">
+      <meta itemprop="description" content="Shen's Blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沈夏希">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/30/lab1/" class="post-title-link" itemprop="url">Lab1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-30 21:58:07 / Modified: 22:58:48" itemprop="dateCreated datePublished" datetime="2022-01-30T21:58:07-08:00">2022-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本部分将介绍一些Linux环境下的工具。Linux现在在工业界依然被广泛应用，原因有很多：开源，稳定。除此之外，我们还将学习怎么使用g++，CMake，git以及github。</p>
+<h1 id="Linux文件系统"><a href="#Linux文件系统" class="headerlink" title="Linux文件系统"></a>Linux文件系统</h1><p>在这里，我们已经默认大家进入了Linux的命令行界面了。</p>
+<p>尝试输入以下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir example_dir</span><br></pre></td></tr></table></figure>
+<p>这个指令将会在你当前目录下，创造一个新的文件夹。输入 <code>cd example_dir</code>，然后输入<code>pwd</code>，你将会看到你的路径像这样<code>/xxxx/xxxx/xxx/example_dir</code>。如果想返回上级菜单，输入<code>cd ..</code>，这两个点<code>..</code>代表了一个保留的上级目录，又叫做父目录。还有一个用一个点的目录<code>.</code>，这代表我们现在的当前目录，我们将在本部分的后面讲到它的使用。有了保留目录，我们回到上级目录就变得很方便，我们不需要每次敲出完整的路径。</p>
+<p>现在尝试输入以下指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /xxxx/xxxx/xxx/example_dir</span><br></pre></td></tr></table></figure>
+<p><code>cd</code>后面的内容，可以通过<code>pwd</code>查看。<code>/xxxx/xxxx/xxx/example_dir</code>这个路径是一个绝对路径，因为它从根节点<code>/</code>开始。所以从根节点<code>/</code>开始的路径都是绝对路径，其他的则为相对路径，比如我们执行命令<code>cd example_dir</code>，这个时候example_dir则是相对路径。但两者可以是有效和无效的。</p>
+<p>现在让我们回到根目录<code>cd~</code>，尝试输入命令<code>ls</code>，这会列出当前目录——也就是根目录的内容（文件）。你应该可以看见目录<code>example_dir</code>，这是我们到目前为止唯一创建的目录。输入<code>ls -a</code>，现在你应该可以看到那些额外的“隐藏”文件了。它们是以<code>.</code>开头的。任何文件（即使是你创建的），只要开头是<code>.</code>，那么他们就会被系统认为是隐藏的，因此不会显示，当你输入<code>ls</code>命令。<br>这些文件通常是一些系统文件或者配置文件，它们起到版本控制或者构建系统的作用，比如<code>.</code>和<code>..</code>。</p>
+<p>现在我们已经知道如何创建并且遍历目录了，让我们把<code>example_dir</code>文件删了吧！注意，确保你当先在你的根目录下<code>cd ~</code>，然后输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rm -rf example_dir</span><br></pre></td></tr></table></figure>
+<p><code>rm</code>是一个用来“删除”文件或者目录的指令。如果你有一个常规的文件，你可以直接输入<code>rm &lt;filename&gt;</code>的指令，不用任何的标签比如<code>-rf</code>。然而，当我们决定要删除一个目录的时候，我们必须要加<code>-rf</code>。因为<code>r</code>意味着recursively地删除文件和目录，即递归的删除，而<code>f</code>的目的是忽略不存在的文件并且不会让用户确认每次的删除。能力越大，责任越大！当前仅当有必要的时候才使用<code>rm -rf</code>。这个最后的标签<code>-rf</code>可能会让你不小心删除一些重要的东西！</p>
+<blockquote>
+<p>特别：有两个有用的方法可以学习如何使用一个指令（比如：查看可用的标签和它们的作用）。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><code>man</code>程序（像用户手册）。你可以输入<code>man ls</code>查看<code>ls</code>指令的使用教程。</li>
+<li>大多数指令都是自带文档的，并且支持<code>--help</code>的标签。你可以获得关于<code>ls</code>的类似信息，通过输入<code>ls --help</code>。</li>
+</ul>
+</blockquote>
+<!-- # The `.bashrc` File
+另一个关于被系统使用的隐藏文件的例子是`.bashrc`文件。你可以通过在根目录`~`输入`ls -a`看到它。`.bashrc`文件是一个配置文件 -->
+
+<h1 id="一个有用的工具-aliasing"><a href="#一个有用的工具-aliasing" class="headerlink" title="一个有用的工具 aliasing"></a>一个有用的工具 aliasing</h1><p>当你要输入一段很长很复杂的指令时候，aliasing可以发挥很大的作用，它可以让指令变短，并且增加可读性。比如我们通过bit.ly传递很长的URL，这真的很繁琐！让哦我们来看一个使用aliasing的例子：</p>
+<p><code>ls -al</code>是一个实用的指令，但如果我们用一个更短的指令，比如<code>la</code>就可以实现这个功能，那不是更酷吗？</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/24/page/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -348,7 +491,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
